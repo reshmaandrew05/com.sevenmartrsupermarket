@@ -1,0 +1,34 @@
+<suite name="Regressionrun" thread-count="5" parallel="tests">
+<listners>
+<listner name="com.sevenrmatrtsupermarket.listners.ExtendReporter "></listner>>
+</listners>
+<test name="ChromeBrowser">
+
+<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.sevenrmatrtsupermarket.tests.HomePageTest"></class>
+			
+		</classes>
+
+	</test>
+
+	<test name="FirefoxBrowser">
+	<parameter name="browser" value="firefox"></parameter>
+	
+		<classes>
+			<class name="com.sevenrmatrtsupermarket.tests.HomePageTest"></class>
+			
+			
+		</classes>
+
+	</test>
+	<test name="EdgeBrowser">
+	<parameter name="browser" value="edge"></parameter>
+		<classes>
+			<class name="com.sevenrmatrtsupermarket.tests.HomePageTest"></class>
+			
+			
+		</classes>
+
+	</test>
+</suite>

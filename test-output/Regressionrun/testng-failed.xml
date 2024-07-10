@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Regressionrun]">
+  <test thread-count="5" name="smoke(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.sevenrmatrtsupermarket.tests.LoginTest">
+        <methods>
+          <include name="verifyLogin"/>
+          <include name="dataRead"/>
+          <include name="launchBrowser"/>
+          <include name="terminateBrowser"/>
+        </methods>
+      </class> <!-- com.sevenrmatrtsupermarket.tests.LoginTest -->
+      <class name="com.sevenrmatrtsupermarket.tests.HomePageTest">
+        <methods>
+          <include name="verifyDashBoardCardsCategory"/>
+          <include name="launchBrowser"/>
+          <include name="terminateBrowser"/>
+        </methods>
+      </class> <!-- com.sevenrmatrtsupermarket.tests.HomePageTest -->
+    </classes>
+  </test> <!-- smoke(failed) -->
+</suite> <!-- Failed suite [Regressionrun] -->

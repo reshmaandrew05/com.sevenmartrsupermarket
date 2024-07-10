@@ -1,0 +1,21 @@
+<suite name="Regressionrun" thread-count="5" parallel="tests"><listners>
+<listner name="com.sevenrmatrtsupermarket.listners.ExtendReporter "></listner>>
+</listners>
+
+	<test name="hometest">
+		<classes>
+			<class name="com.sevenrmatrtsupermarket.tests.HomePageTest"></class>
+			
+		</classes>
+
+	</test>
+
+	<test name="logintest">
+		<classes>
+			<class name="com.sevenrmatrtsupermarket.tests.LoginTest"></class>
+			
+			
+		</classes>
+
+	</test>
+</suite>
