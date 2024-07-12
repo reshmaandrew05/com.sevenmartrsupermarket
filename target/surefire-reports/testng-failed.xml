@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Regressionrun]" verbose="0">
+  <test thread-count="5" parallel="tests" name="logintest(failed)" verbose="0">
+    <classes>
+      <class name="com.sevenrmatrtsupermarket.tests.LoginTest">
+        <methods>
+          <include name="verifyLogin"/>
+          <include name="launchBrowser"/>
+          <include name="launchBrowser"/>
+          <include name="terminateBrowser"/>
+        </methods>
+      </class> <!-- com.sevenrmatrtsupermarket.tests.LoginTest -->
+    </classes>
+  </test> <!-- logintest(failed) -->
+</suite> <!-- Failed suite [Regressionrun] -->

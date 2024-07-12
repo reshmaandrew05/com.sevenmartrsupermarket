@@ -5,10 +5,10 @@
     <classes>
       <class name="com.sevenrmatrtsupermarket.tests.AdminTest">
         <methods>
-          <include name="verifyNewAdminUserCreation"/>
+          <include name="launchBrowser"/>
+          <include name="launchBrowser"/>
           <include name="terminateBrowser"/>
-          <include name="launchBrowser"/>
-          <include name="launchBrowser"/>
+          <include name="adminUserNameSearch"/>
         </methods>
       </class> <!-- com.sevenrmatrtsupermarket.tests.AdminTest -->
     </classes>

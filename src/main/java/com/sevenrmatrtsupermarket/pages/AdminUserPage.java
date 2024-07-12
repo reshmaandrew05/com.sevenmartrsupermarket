@@ -36,6 +36,18 @@ import com.sevenrmatrtsupermarket.utilities.PageUtility;
 		WebElement savebutton;
 		@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
 		WebElement sucessalertbox;
+		@FindBy(xpath="//h1[contains(text(),'Admin Users')]")
+		WebElement adminuserheader;
+		@FindBy(xpath="//a[@onclick='click_button(2)']")
+		WebElement adminsearchbutton;
+		@FindBy(xpath="//input[@id='un']")
+		WebElement adminsearchname;
+		@FindBy(xpath="//select[@id='ut']")
+		WebElement adminsearchtype;
+		@FindBy(xpath="//button[@name='Search']")
+		WebElement internalsearchbutton;
+		@FindBy(xpath="//span[@class='badge bg-success']")
+		WebElement activestatus;
 		
 		
 		public AdminUserPage(WebDriver driver) {
@@ -80,6 +92,39 @@ import com.sevenrmatrtsupermarket.utilities.PageUtility;
 		{
 			return generalutility.isTextPresent(sucessalertbox, expecteddata);
 		}
+		public String adminHeaderName()
+		{
+			return adminuserheader.getText();
+		}
+		public void adminSearchButtonClick()
+		{
+			adminsearchbutton.click();
+		}
+		public void adminNameSearchUserName(String username)
+		{
+			adminsearchname.sendKeys(username);
+		}
+		public void adminNameSearchUserType(String usertype)
+		{
+			pageutility.selectTo_ByValue(adminsearchtype, usertype);
+		}
+		public void searchButtonActual()
+		{
+			internalsearchbutton.click();
+		}
+		public void searchAdminUser(String username, String usertype)
+		{
+			adminSearchButtonClick();
+			adminNameSearchUserName(username);
+			adminNameSearchUserType(usertype);
+			searchButtonActual();
+		}
+		public boolean checkifSearchUserPresent(String expecteddata)
+		{
+			return generalutility.isTextPresent(activestatus, expecteddata);
+			
+		}
+		
 	}
 
 

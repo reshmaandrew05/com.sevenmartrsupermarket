@@ -1,25 +1,47 @@
 package com.sevenrmatrtsupermarket.tests;
 
+
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.sevenrmatrtsupermarket.base.Base;
 import com.sevenrmatrtsupermarket.pages.HomePage;
 import com.sevenrmatrtsupermarket.pages.LoginPage;
 import com.sevenrmatrtsupermarket.utilities.ExcelReader;
 
+
+
 public class LoginTest extends Base {
 	LoginPage loginpage;
 	HomePage homepage;
+	DataProvider dataprovider;
 	ExcelReader excelreader = new ExcelReader();
+	
+	//test case by reading data from excel using data providers from data providers class
 
-	@Test(groups= {"smoke","sanity"})
-	public void verifyLogin() {
-
+	@Test(dataProvider = "login",dataProviderClass = com.sevenrmatrtsupermarket.dataproviders.DataProviders.class)
+	public void verifyLogin(String username,String password) {
+		loginpage = new LoginPage(driver);
+		loginpage.login(username,password);
+		homepage = new HomePage(driver);
+		String data = excelreader.getCellData(1, 0);
+		String expecteddata="admin";
+		String passwrd = excelreader.getCellData(1, 1);
+		String expectedpassword="admin";
+		Assert.assertEquals(data,expecteddata);
+		Assert.assertEquals(passwrd,expectedpassword);
+		homepage.navigateToCard("Category");
+	}
+		
+		//login test case by reading data from excel without using data providers
+		@Test
+		public void verifyLogin()
+		{
 		loginpage = new LoginPage(driver);
 		excelreader.setExcelFile("Logindata", "credentials");
 		String data = excelreader.getCellData(1, 0);
-		String password = excelreader.getCellData(1, 1);
-		loginpage.login(data, password);
+		String passwrd = excelreader.getCellData(1, 1);
+		loginpage.login(data, passwrd);
 		homepage = new HomePage(driver);
 		String actualprofilename = homepage.getProfileName();
 		System.out.println(actualprofilename);

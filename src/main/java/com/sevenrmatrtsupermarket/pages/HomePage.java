@@ -9,12 +9,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
 	WebDriver driver;
+	
 	@FindBy(xpath = "//a[@class='d-block']")
-	WebElement profilename;
+	private WebElement profilename;
 	@FindBy(xpath="//section//div[@class='container-fluid']//a")
-	List <WebElement> homepagecards;
+	private List <WebElement> homepagecards;
 	@FindBy(xpath="//section//div[@class='container-fluid']//div//p")
-	List<WebElement> cardnames;
+	private List<WebElement> cardnames;
 	
 	
 	
