@@ -33,7 +33,7 @@ public class LoginTest extends Base {
 		homepage.navigateToCard("Category");
 	}
 		
-		
+		//used excel reader instead of data providers
 		@Test
 		public void verifyLogin()
 		{
