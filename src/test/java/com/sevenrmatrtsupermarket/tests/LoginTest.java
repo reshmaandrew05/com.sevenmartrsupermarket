@@ -33,7 +33,7 @@ public class LoginTest extends Base {
 		homepage.navigateToCard("Category");
 	}
 		
-		//login test case by reading data from excel without using data providers
+		
 		@Test
 		public void verifyLogin()
 		{
